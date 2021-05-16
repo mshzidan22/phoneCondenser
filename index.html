@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tab1">
+            <h1 class="text-center">Upload CSV file</h1>
+            <input class="form-control form-control-lg mb-5" id="formFileLg" type="file" accept=".csv" onchange="readCSV(this)">
+        </div>
+
+        <div id="tab2" style="display:none">
+            <h5> choose the columns that will be compared</h5>
+            <hp>the choosen colums tell the app what rows represent the same person </hp>
+            <div id="pannel" class="border m-3">
+
+            </div>
+            <button class="btn btn-primary mb-3" onclick="selectHeaders()"> Done</button>
+        </div>
+
+
+        <div id="tab3" style="display:none">
+            <h5>Choose Phone column</h5>
+            <h6>usually phone_1</h6>
+
+            <div id="phone1Container" class="border m-4">
+
+            </div>
+            <button class="btn btn-primary mb-3" onclick="selectPhoneOne()"> Done</button>
+        </div>
+
+        <div id="tab4" class="border" style="display:none">
+            <h5>Choose columns to put others phones in</h5>
+            <h6>usually (phone_2, phone_3, phone_4, phone_5, phone_6) </h6>
+            <div id="phonesRangeContainer" class="border m-4">
+
+            </div>
+            <button class="btn btn-primary" onclick="selectPhonesRange()"> Condense Data</button>
+        </div>
+
+        <div id="tab5" class="text-center" style="display:none">
+            <a id="downloadBtn" class="btn btn-success" onclick="downloadFile()">Done, DownLoad The Output File</a>
+        </div>
+
+    </div>
+    <!----------------------------------------->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/papaparse.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
